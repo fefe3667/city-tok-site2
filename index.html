@@ -1,170 +1,51 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>City Tok - Candy Landy City</title>
-  <style>
-    body {
-      background-color: #ffcce6;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #5a004f;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      font-size: 28px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 30px;
-    }
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-      background: #fff0f5;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #e892b4;
-    }
-    label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
-    }
-    input, select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    button {
-      margin-top: 20px;
-      padding: 12px 30px;
-      background-color: #d63384;
-      color: white;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #c21870;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>🌼 Isso foi pela Nay, minha razão de sorrir todo dia 🌼</h1>
-
-  <p>Siga nossa city <strong>“Candy Landy City”</strong> para nos ajudar a crescer!</p>
-  <a href="https://whatsapp.com/channel/0029Vb9j49t1Xquc58PAIF0D" target="_blank">
-    Canal no WhatsApp da Candy Landy City
-  </a>
-
-  <form>
-    <h2>Entrar na City Tok</h2>
-    <label for="nome">Nome</label>
-    <input type="text" id="nome" name="nome" required>
-
-    <label for="senha">Senha</label>
-    <input type="password" id="senha" name="senha" required>
-
-    <label for="tipo">Tipo de Conta</label>
-    <select id="tipo" name="tipo">
-      <option value="city">City</option>
-      <option value="player">Player</option>
-    </select>
-
-    <button type="submit">Cadastrar</button>
-  </form>
-
-</body>
-</html>
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CityTok</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .button {
-            background-color: #ff4081;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .button:hover {
-            background-color: #ff1a66;
-        }
-        h1 {
-            color: #ff4081;
-        }
-        p {
-            font-size: 18px;
-        }
-    </style>
+    <title>Candy Landy City</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Homenagem à Nay -->
+    <header>
+        <h1>Isso foi pela Nay, minha razão de sorrir todo dia</h1>
+        <p>Siga nossa cidade Candy Landy City para nos ajudar a fazer mais</p>
+    </header>
 
-    <div class="container">
-        <h1>Bem-vindo ao CityTok!</h1>
-        <p>Faça login ou registre-se para começar a explorar as cidades.</p>
-        <button class="button" id="cadastro-btn">Cadastrar</button>
-        <div id="login-container" style="display:none;">
-            <h2>Cadastro ou Login</h2>
-            <input type="text" id="username" placeholder="Digite seu nome" required>
-            <br><br>
-            <button class="button" id="submit-btn">Enviar</button>
-        </div>
+    <!-- Botão de Cadastro -->
+    <div id="botao-cadastro">
+        <button onclick="mostrarCadastro()">Cadastrar</button>
     </div>
 
-    <script>
-        // Script para controle do botão de cadastro
-        document.getElementById('cadastro-btn').addEventListener('click', function() {
-            // Oculta o botão de cadastro e exibe o formulário de login/cadastro
-            document.querySelector('.container p').style.display = 'none';
-            document.getElementById('cadastro-btn').style.display = 'none';
-            document.getElementById('login-container').style.display = 'block';
-        });
+    <!-- Formulário de Cadastro -->
+    <div id="form-cadastro" style="display: none;">
+        <h2>Cadastro</h2>
+        <form onsubmit="enviarCadastro(); return false;">
+            <input type="text" id="nome" placeholder="Nome Completo" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+            <label>
+                <input type="radio" name="tipo" value="city" onclick="alternarTipo()" required> City
+            </label>
+            <label>
+                <input type="radio" name="tipo" value="player" onclick="alternarTipo()" required> Player
+            </label>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
 
-        // Script para simular envio do cadastro
-        document.getElementById('submit-btn').addEventListener('click', function() {
-            const username = document.getElementById('username').value;
+    <!-- Link de Cadastro -->
+    <div id="perfil-user" style="display: none;">
+        <h2>Perfil</h2>
+        <div>
+            <img id="foto-perfil" src="perfil.jpg" alt="Foto de Perfil" style="width: 100px; height: 100px;">
+            <button onclick="mudarFotoPerfil('nova-foto.jpg')">Mudar Foto</button>
+        </div>
+        <input type="text" id="nome-perfil" placeholder="Nome que as pessoas vão ver" required>
+        <button onclick="salvarPerfil()">Salvar</button>
+    </div>
 
-            if (username) {
-                alert('Cadastro realizado com sucesso!');
-                // Redirecionar para a página do perfil ou outra funcionalidade
-                window.location.href = "perfil.html"; // Altere para a página desejada
-            } else {
-                alert('Por favor, insira seu nome.');
-            }
-        });
-    </script>
-
+    <script src="scripts.js"></script>
 </body>
 </html>
+
