@@ -1,52 +1,91 @@
-body {
-    font-family: 'Arial', sans-serif; /* Fonte padrão */
-    margin: 0;
-    padding: 0;
-    background-color: #f8bbd0; /* Fundo rosa claro */
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>City Tok - Candy Landy City</title>
+  <style>
+    body {
+      background-color: #ffcce6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #5a004f;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 30px;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #fff0f5;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #e892b4;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background-color: #d63384;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c21870;
+    }
+  </style>
+</head>
+<body>
 
-header {
-    background-color: #ff8c00;
-    padding: 20px;
-    text-align: center;
-    color: white;
-}
+  <h1>🌼 Isso foi pela Nay, minha razão de sorrir todo dia 🌼</h1>
 
-h1 {
-    margin: 0;
-    font-family: 'Comic Sans MS', sans-serif; /* Mudança da fonte para Comic Sans */
-    font-size: 2.5em;
-}
+  <p>Siga nossa city <strong>“Candy Landy City”</strong> para nos ajudar a crescer!</p>
+  <a href="https://whatsapp.com/channel/0029Vb9j49t1Xquc58PAIF0D" target="_blank">
+    Canal no WhatsApp da Candy Landy City
+  </a>
 
-.whatsapp-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #25d366;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
+  <form>
+    <h2>Entrar na City Tok</h2>
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" name="nome" required>
 
-#feed-videos {
-    margin: 20px;
-}
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" name="senha" required>
 
-.video {
-    margin-bottom: 15px;
-}
+    <label for="tipo">Tipo de Conta</label>
+    <select id="tipo" name="tipo">
+      <option value="city">City</option>
+      <option value="player">Player</option>
+    </select>
 
-#parcerias {
-    background-color: #e0e0e0;
-    padding: 15px;
-}
+    <button type="submit">Cadastrar</button>
+  </form>
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+</body>
+</html>
