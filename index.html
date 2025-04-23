@@ -89,3 +89,82 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityTok</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button {
+            background-color: #ff4081;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #ff1a66;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bem-vindo ao CityTok!</h1>
+        <p>Faça login ou registre-se para começar a explorar as cidades.</p>
+        <button class="button" id="cadastro-btn">Cadastrar</button>
+        <div id="login-container" style="display:none;">
+            <h2>Cadastro ou Login</h2>
+            <input type="text" id="username" placeholder="Digite seu nome" required>
+            <br><br>
+            <button class="button" id="submit-btn">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        // Script para controle do botão de cadastro
+        document.getElementById('cadastro-btn').addEventListener('click', function() {
+            // Oculta o botão de cadastro e exibe o formulário de login/cadastro
+            document.querySelector('.container p').style.display = 'none';
+            document.getElementById('cadastro-btn').style.display = 'none';
+            document.getElementById('login-container').style.display = 'block';
+        });
+
+        // Script para simular envio do cadastro
+        document.getElementById('submit-btn').addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+
+            if (username) {
+                alert('Cadastro realizado com sucesso!');
+                // Redirecionar para a página do perfil ou outra funcionalidade
+                window.location.href = "perfil.html"; // Altere para a página desejada
+            } else {
+                alert('Por favor, insira seu nome.');
+            }
+        });
+    </script>
+
+</body>
+</html>
